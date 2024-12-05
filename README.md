@@ -59,7 +59,7 @@ C(reate) уже показывал, осталось показать RUD
 
 ## Ссылка на развернутый сервис
 
-Приложение развернуто на [Railway](randomuserapi-production.up.railway.app).
+Приложение развернуто на [Railway](https://randomuserapi-production.up.railway.app).
 
 
 
