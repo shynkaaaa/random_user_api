@@ -1,4 +1,3 @@
-import requests
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from sqlalchemy import JSON
@@ -7,9 +6,6 @@ from src.models import User
 from src.schemas.user_schema import UserUpdate
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def main_api():
-    return requests.get("https://randomuser.me/api/")
 
 def create_user(response: JSON, db: Session):
     data = response.json()["results"][0]
