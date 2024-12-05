@@ -11,7 +11,8 @@ from src.schemas.user_schema import UserUpdate
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def main_api():
-    return requests.get("https://randomuser.me/api/")
+    response = requests.get("https://randomuser.me/api/")
+    return response.json()
 
 def test_service():
     return main_api()

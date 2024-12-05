@@ -1,13 +1,12 @@
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
-from sqlalchemy import JSON
 
 from src.models import User
 from src.schemas.user_schema import UserUpdate
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-def create_user(response: JSON, db: Session):
+def create_user(response, db: Session):
     data = response.json()["results"][0]
 
     plain_password = data["login"]["password"]
