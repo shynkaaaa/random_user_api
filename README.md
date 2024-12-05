@@ -11,14 +11,10 @@ CRUD and Authorization using RandomUserAPI
    cd https://github.com/shynkaaaa/random_user_api
    
 2. **Создайте и активируйте виртуальное окружение**:
-   Для Windows:
+   2.1) Для Windows:
       ```bash
       python -m venv venv
-      .\venv\Scripts\activate
-   Для Mac/Linux:
-      ```bash
-      python3 -m venv venv
-      source venv/bin/activate
+      \venv\Scripts\activate
 3. **Установите зависимости**:
    ```bash
    pip install -r requirements.txt
