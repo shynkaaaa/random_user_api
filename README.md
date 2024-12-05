@@ -8,8 +8,8 @@ CRUD and Authorization using RandomUserAPI
 1. **Клонируйте репозиторий**:
    ```bash
    git clone https://github.com/shynkaaaa/random_user_api.git
-   cd https://github.com/shynkaaaa/random_user_api
-   
+   cd random_user_api
+     
 2. **Создайте и активируйте виртуальное окружение**:
    2.1) Для Windows:
       ```bash
@@ -23,3 +23,45 @@ CRUD and Authorization using RandomUserAPI
    uvicorn src.main:app --reload
 5. **Приложение будет доступно по адресу указанной в терминале после введение кода выше**:
 ![image](https://github.com/user-attachments/assets/8faa9eac-380c-48be-a20b-7e47051f98e1)
+
+Эндпоинты API
+=============
+
+Проверка всех эндпоинтов в моем проекте.
+Сразу хотел бы сказать что я не совсем понял что вы имели ввиду под авторизации когда идёт тест внешнего API и так как особых указании не было, я сделал так.
+При регистрации пользователя, там выводится фильтрованная информация где есть почта и пароль. Пароль который выводится после регистрации пользователя не зашифрованный, а просто plain_password. Но в базе данных оно с шифрингом. После запоминаются эти две данные и с ними уже проходим аутентификаци, получаем токен, и с этим токеном можем заходить на страницу protected(авторизация)!
+
+1. **Тестирование внешнего API**:
+![image](https://github.com/user-attachments/assets/199481d8-28ba-44b3-b79a-e887e01ed1fc)
+
+2. **Регистрация пользователя**
+Вот тут запоминаем эти два значения о которых я говорил выше:
+![image](https://github.com/user-attachments/assets/a7223612-49a4-412c-a712-4e1bc08c6405)
+
+3. **Аутентификация пользователя**
+Теперь вводим их сюда, в JSON файл и отправляем пост запрос:
+![image](https://github.com/user-attachments/assets/27c8979e-3d40-45b3-bdfd-8af7198450f2)
+
+4. **Проверка защищенного маршрута**
+После через этот токен можем пройти авторизацию!
+![image](https://github.com/user-attachments/assets/22af42f5-252a-4ee4-84e5-3dbf4ad6c558)
+
+5. **Остаток CRUD-а**
+C(reate) уже показывал, осталось показать RUD
+![image](https://github.com/user-attachments/assets/c7e3b8cb-28c0-446b-9815-893103ad0e36)
+
+Вот тут кстати лишь айди юзера не Optional, а остальные данные можно по выбору менять!
+К примеру тут я поменял на свою фамилию второго юзера:
+![image](https://github.com/user-attachments/assets/b9c01b13-635a-4e22-86c4-766fecff0c26)
+
+И вот delete по айди:
+![image](https://github.com/user-attachments/assets/b5c06ea4-595c-4c21-b36a-64781b2ddb61)
+
+## Ссылка на развернутый сервис
+
+Приложение развернуто на [Railway]randomuserapi-production.up.railway.app).
+
+
+
+
+
