@@ -9,10 +9,7 @@ class User(BaseModel):
     gender: str
     country: str
     city: str
-
-class UserResponse(User):
-    id: int
-
+    
 class UserLogin(BaseModel):
     email: str
     password: str
