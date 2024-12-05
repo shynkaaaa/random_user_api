@@ -28,4 +28,6 @@ def create_user(db: Session):
     db.commit()
     db.refresh(user)
 
+    user.password = plain_password
+
     return user

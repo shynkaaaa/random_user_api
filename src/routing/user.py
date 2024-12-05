@@ -10,5 +10,4 @@ router = APIRouter()
 
 @router.post("/random/")
 def create_random_user(db: Session = Depends(get_db)):
-    user = register_user_service(db)
-    return JSONResponse(content={"message": f"User {user.first_name + " " + user.last_name} with id: {user.id} create successfully!"}, status_code=200)
+    return register_user_service(db)
