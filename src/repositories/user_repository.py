@@ -6,8 +6,11 @@ from src.models import User
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+def main_api():
+    return requests.get("https://randomuser.me/api/")
+
 def create_user(db: Session):
-    response = requests.get("https://randomuser.me/api/")
+    response = main_api()
     data = response.json()["results"][0]
 
     plain_password = data["login"]["password"]
