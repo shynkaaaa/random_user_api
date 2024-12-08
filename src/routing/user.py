@@ -15,7 +15,7 @@ def test_external_api():
     Тестовый эндпоинта для проверки интеграции с внешним API.
     """
     response = test_service()
-    return response.json()
+    return response
 
 @router.post("/random/")
 def create_random_user(db: Session = Depends(get_db)):
