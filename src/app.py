@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from src.routing import user
 from src.database import Base, engine
+from prometheus_fastapi_instrumentator import Instrumentator
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -11,6 +12,8 @@ async def lifespan(app: FastAPI):
     yield  
 
 app = FastAPI(lifespan=lifespan)
+
+Instrumentator().instrument(app).expose(app)
 
 app.include_router(user.router, prefix="/users", tags=["user"])
 
