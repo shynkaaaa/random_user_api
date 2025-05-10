@@ -7,7 +7,7 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String)
     age = Column(Integer)
-    email = Column(String)
+    email = Column(String, )
     password = Column(String)
     gender = Column(String)
     country = Column(String)

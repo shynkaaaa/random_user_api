@@ -1,1 +1,7 @@
-DATABASE_URL = f"postgresql://postgres:MWuPouOQSoPgcEjqrhhkeBVLxZPmnjzk@junction.proxy.rlwy.net:11284/railway"
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
